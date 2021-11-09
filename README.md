@@ -67,7 +67,7 @@ To mitigate SPOFs we have 3 key approaches:
 - Master Slave Approach: This approach is quite useful especially in the context of databases. The main question here is what if a database goes down. This can be mitigated by having a master database off which slaves replicate. So in the case master goes down, one of the slaves can become a master. There can be additional complexity such as having multiple masters or having read only slaves/write only slaves. 
 - Multiple Regions: Having all resources in one region can also mean a SPOF. For instance, all your services in the cloud are in the US east region. To avoid, infrastructure going down in one area or a natural disaster happenning, having services and resources split across multiple regions is a good practice.
 
-Diagram of master slave approach:
+An Example Diagram of master slave approach:
 
 ![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c6359d96-393a-4e7d-873f-6a8b143d01a0/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211109%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211109T180743Z&X-Amz-Expires=86400&X-Amz-Signature=45721f14d8517f0973634ab62f6907a8191755705b529311479a632c46793dd2&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
 
