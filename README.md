@@ -58,6 +58,17 @@ In any scalable system, we must avoid single point of failures. As the name sugg
 As an example, this image displays how a single load balancer could be an SPOF. 
 
 ![](https://avinetworks.com/wp-content/uploads/2020/09/single-point-of-failure-diagram.png)
+
+As the image suggests, having multiple load balancers is the solution. 
+
+To mitigate SPOFs we have 3 key approaches:
+
+- More Nodes: With more nodes one can duplicate the node or service and distribute traffic among them. Another way is to use the secondary node/nodes as a backup service, though that would potentially lead to wasting resources. 
+- Master Slave Approach: 
+1. More Nodes, either duplicate the service to distribute traffic or have a backup service
+2. Master Slave Approach: Replicas, in the context of databases some slaves might be just read slaves and some just write slaves
+3. Multiple Regions
+
 ## Databases 
 
 
