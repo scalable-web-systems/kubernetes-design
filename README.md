@@ -53,7 +53,11 @@ An image displaying the proof:
 
 ## Single Point of Failure (SPOF)
 
+In any scalable system, we must avoid single point of failures. As the name suggests, it is a a node,(it could be any part of the system) if it fails the whole system would go down. 
 
+As an example, this image displays how a single load balancer could be an SPOF. 
+
+![](https://avinetworks.com/wp-content/uploads/2020/09/single-point-of-failure-diagram.png)
 ## Databases 
 
 
