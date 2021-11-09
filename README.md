@@ -74,8 +74,97 @@ An Example Diagram of master slave approach:
 
 ## Databases 
 
+The following are some key concepts in databases. 
+
+### ACID Compliance
+
+**Atomicity**: Database transactions, like atoms, can be broken 
+down into smaller parts. When it comes to your database, atomicity 
+refers to the integrity of the entire database transaction, not just a 
+component of it. In other words, if one part of a transaction doesn’t 
+work like it’s supposed to, the other will fail as a result—and vice 
+versa. For example, if you’re shopping on an e-commerce site, you must 
+have an item in your cart in order to pay for it. What you can’t do is 
+pay for something that’s not in your cart. (You can add something into 
+your cart and not pay for it, but that database transaction won’t be 
+complete, and thus not ‘atomic’, until you pay for it).
+
+**Consistency**: For any database to operate as it’s intended to 
+operate, it must follow the appropriate data validation rules. Thus, 
+consistency means that only data which follows those rules is permitted 
+to be written to the database. If a transaction occurs and results in 
+data that does not follow the rules of the database, it will be ‘rolled 
+back’ to a previous iteration of itself (or ‘state’) which complies with
+ the rules. On the other hand, following a successful transaction, new 
+data will be added to the database and the resulting state will be 
+consistent with existing rules.
+
+**Isolation**: It’s safe to say that at any given time on Amazon, 
+there is far more than one transaction occurring on the platform. In 
+fact, an incredibly huge amount of database transactions are occurring 
+simultaneously. For a database, isolation refers to the ability to 
+concurrently process multiple transactions in a way that one does not 
+affect another. So, imagine you and your neighbor are both trying to buy
+ something from the same e-commerce platform at the same time. There are
+ 10 items for sale: your neighbor wants five and you want six. Isolation
+ means that one of those transactions would be completed ahead of the 
+other one. In other words, if your neighbor clicked first, they will get
+ five items, and only five items will be remaining in stock. So you will
+ only get to buy five items. If you clicked first, you will get the six 
+items you want, and they will only get four. Thus, isolation ensures 
+that eleven items aren’t sold when only ten exist.
+
+**Durability**: All technology fails from time to time… the goal 
+is to make those failures invisible to the end-user. In databases that 
+possess durability, data is saved once a transaction is completed, even 
+if a power outage or system failure occurs. Imagine you’re buying 
+in-demand concert tickets on a site similar to Ticketmaster.com. Right 
+when tickets go on sale, you’re ready to make a purchase. After being 
+stuck in the digital waiting room for some time, you’re finally able to 
+add those tickets to your cart. You then make the purchase and get your 
+confirmation. However if that database lacks durability, even after your
+ ticket purchase was confirmed, if the database suffers a failure 
+incident your transaction would still be lost! As you might expect, this
+ is a really bad thing to happen for an online e-commerce site, so 
+transaction durability is a must-have.
+
+### Database Sharding 
+
+Database sharding is a popular concept when dealing with high volume data and is a very popular way to manage in No-SQL databases. Shards are autonomous and is an example to scale horizontally. Shards are basically partitions of the database based on a key. This key is what decides the shards, it could be a column value, it could be location or user ID or any other attribute that makes sense and works universally on the incoming data. Each shard can be protected by the master slave architecture for further scalability. 
+
+An example of shards:
+
+![](https://assets.digitalocean.com/articles/understanding_sharding/DB_image_3_cropped.png)
+
+
+## Caching
+
+Caching is a way to speed up retrieval of frequently or commonly accessed data. This means storing data in something like Redis that helps retrieve data very quickly. 
+
+### Advantages of Caching 
+- Reduce network calls
+- Reduce recomputations
+- Reduce DB load
+
+### Caching Policies
+
+Caching policies are used to delete unnecessary cache values to make sure the cache is up to date and always fresh and relevant to the incoming requests. 
+
+- LRU Cache - Least Recently Used
+- LFU Cache - Least Frequently Used Cache
+- Sliding window
+
+### Updating the Cache
+
+
+- Cache Aside
+- Write Through
+- Write Behind
+- Refresh Ahead
+
 
 
 ## Acknowledgements 
 
 - [CAP](https://stackoverflow.com/questions/12346326/cap-theorem-availability-and-partition-tolerance)
+- [Updating cache](https://dev.to/vishnuchilamakuru/4-ways-to-update-your-cache-jmg)
