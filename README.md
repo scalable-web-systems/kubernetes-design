@@ -162,7 +162,12 @@ Caching policies are used to delete unnecessary cache values to make sure the ca
 - Write Behind
 - Refresh Ahead
 
+## Storing Images 
 
+| Syntax      | Description |
+| ----------- | ----------- |
+| - Header      | Title       |
+| - Paragraph   | Text        |
 
 ## Acknowledgements 
 
