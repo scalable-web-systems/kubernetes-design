@@ -1,8 +1,5 @@
 # kubernetes-design
 
-High level topics: Databases, Caching, some basics(CAP Theorem)
-
-
 ## Introduction 
 
 When it comes to building scalable systems, kubernetes is a great tool and a quite a popular one. However, there are many fundamental concepts that one needs to think about from a system design perspective when thinking about scalable systems in the context of kubernetes. This tutorial hopes to cover some of the fundamental concepts such as databases, caching, the CAP theorem. 
@@ -139,12 +136,12 @@ An example of shards:
 
 ## Caching
 
-Caching is a way to speed up retrieval of frequently or commonly accessed data. This means storing data in something like Redis that helps retrieve data very quickly. 
+Caching is a way to speed up retrieval of frequently or commonly accessed data. This means storing data in something like Redis that helps retrieve data very quickly. The reason this is possible is the data is stored in memory instead of a storage device like a disk(which is slower than in memory). In memory storage also means it is volatile which means it does not have ACID compliance. 
 
 ### Advantages of Caching 
 - Reduce network calls
-- Reduce recomputations
-- Reduce DB load
+- Reduce Recomputations
+- Reduce Database load
 
 ### Caching Policies
 
