@@ -180,7 +180,11 @@ Blob: Binary Large Object
 - Indexes with databases can improve search
 - Easy Access control with databases for images is quite useufl too
 
+## Queue Systems 
 
+## API Gateway 
+
+## 
 ## Acknowledgements 
 
 - [CAP](https://stackoverflow.com/questions/12346326/cap-theorem-availability-and-partition-tolerance)
