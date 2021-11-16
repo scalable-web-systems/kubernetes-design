@@ -164,10 +164,13 @@ Caching policies are used to delete unnecessary cache values to make sure the ca
 
 ## Storing Images 
 
-| Syntax      | Description |
-| ----------- | ----------- |
-| - Header      | Title       |
-| - Paragraph   | Text        |
+## Storing it as a Blob (in a file system)
+
+- Storing files in a file system is often cheaper in the context of cost
+- Database needs to be used to the save the file URL
+- it is a static asset so can be used with CDNs - allows fast access
+
+
 
 ## Acknowledgements 
 
