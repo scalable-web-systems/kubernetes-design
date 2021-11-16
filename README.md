@@ -164,12 +164,21 @@ Caching policies are used to delete unnecessary cache values to make sure the ca
 
 ## Storing Images 
 
-## Storing it as a Blob (in a file system)
+### Storing it as a file (in a file system)
 
 - Storing files in a file system is often cheaper in the context of cost
 - Database needs to be used to the save the file URL
 - it is a static asset so can be used with CDNs - allows fast access
 
+### Storing it in a database (as a Blob)
+
+```
+Blob: Binary Large Object
+```
+
+- Storing the image as a blog in a database means there is ACID compliance which gives transaction garrantuees
+- Indexes with databases can improve search
+- Easy Access control with databases for images is quite useufl too
 
 
 ## Acknowledgements 
