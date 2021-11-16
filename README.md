@@ -179,10 +179,29 @@ Blob: Binary Large Object
 
 ## Queue Systems 
 
+Queues are used to in many scalable and distributed systems. They allow for asychronous tasks and environment to be handled which allows for better performance. It also makes a scalable system more fault tolerant as it acts as an intermediary between services. They also allow for very high throughput and scalability. 
+
+### Publisher Subscriber Model 
+
+Often queues will be used through a publisher subscriber model. For Example, if we have a pizza delivery system, the client on the front-end acts as a publisher i.e. it publishes orders on to the queue. Then a service that notifies the team aobut the order is a subscriber. There can be mulitple subscribers and producers and a service can act as both. 
+
+Sample Publisher Subscriber Model:
+![](https://pulsar.apache.org/docs/assets/pulsar-subscription-types.png)
+
+More generall we can say that the model looks like the following:
+![](https://miro.medium.com/max/1400/0*UJZs-kc51yYIXObI)
+
+### Message Guarantees
+
+
+    No guarantee — No explicit guarantee is provided, so consumers may process messages once, multiple times or never at all.
+    At most once — This is “best effort” delivery semantics. Consumers will receive and process messages exactly once or not at all.
+    At least once — Consumers will receive and process every message, but they may process the same message more than once.
+    Effectively once — Also contentiously known as exactly once, this promises consumers will process every message once.
 ## API Gateway 
 
-## 
 ## Acknowledgements 
 
 - [CAP](https://stackoverflow.com/questions/12346326/cap-theorem-availability-and-partition-tolerance)
 - [Updating cache](https://dev.to/vishnuchilamakuru/4-ways-to-update-your-cache-jmg)
+- [Message Processing Guarantees](https://medium.com/@andy.bryant/processing-guarantees-in-kafka-12dd2e30be0e)
