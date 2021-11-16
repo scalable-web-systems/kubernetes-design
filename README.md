@@ -63,6 +63,7 @@ To mitigate SPOFs we have 3 key approaches:
 
 - More Nodes: With more nodes one can duplicate the node or service and distribute traffic among them. Another way is to use the secondary node/nodes as a backup service, though that would potentially lead to wasting resources. 
 - Master Slave Approach: This approach is quite useful especially in the context of databases. The main question here is what if a database goes down. This can be mitigated by having a master database off which slaves replicate. So in the case master goes down, one of the slaves can become a master. There can be additional complexity such as having multiple masters or having read only slaves/write only slaves. 
+- Master - Master Approach: This is like the master slave approach however in this case the two or more nodes, all get read requests and write loads are distributed among the master nodes. The advantage it is a simple automatic failover. The main disadvatange is that it is loosely consistent and it is not as simple as master-slave to configure. 
 - Multiple Regions: Having all resources in one region can also mean a SPOF. For instance, all your services in the cloud are in the US east region. To avoid, infrastructure going down in one area or a natural disaster happenning, having services and resources split across multiple regions is a good practice.
 
 An Example Diagram of master slave approach:
