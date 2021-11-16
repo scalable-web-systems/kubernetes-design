@@ -1,4 +1,4 @@
-# kubernetes-design
+# Kybernetes System Design
 
 ![](https://snyk.io/wp-content/uploads/Kubernetes-Blog.png)
 ## Introduction 
