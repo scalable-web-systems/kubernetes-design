@@ -193,12 +193,26 @@ More generall we can say that the model looks like the following:
 
 ### Message Guarantees
 
+In any system, we need to think about potential tradeoffs and guarantees. In queueing systems, one thing to talk about is processing/messaging guarantees. 
 
-    No guarantee — No explicit guarantee is provided, so consumers may process messages once, multiple times or never at all.
-    At most once — This is “best effort” delivery semantics. Consumers will receive and process messages exactly once or not at all.
-    At least once — Consumers will receive and process every message, but they may process the same message more than once.
-    Effectively once — Also contentiously known as exactly once, this promises consumers will process every message once.
+- No guarantee — No explicit guarantee is provided, so consumers may process messages once, multiple times or never at all.
+- At most once — This is “best effort” delivery semantics. Consumers will receive and process messages exactly once or not at all.
+- At least once — Consumers will receive and process every message, but they may process the same message more than once.
+- Effectively once — Also contentiously known as exactly once, this promises consumers will process every message once.
+
 ## API Gateway 
+
+An API Gateway is the entry door for a client to talk to a collection of backend services. The gateway provides a single entrypoint which allows it to look for the right services to talk to in the backend the return the approporiate result. 
+
+API Gateway Architecture:
+![](https://i0ba83ftsgi2rzkek1hlusq1-wpengine.netdna-ssl.com/wp-content/uploads/2018/04/API-Gateway-Diagram.jpg)
+
+Uses for API Gateway:
+- Rate Limiting
+- Statistics & User Analytics 
+- Handling User Authentication 
+- Handling multiple requests in a microservices architecture 
+
 
 ## Acknowledgements 
 
